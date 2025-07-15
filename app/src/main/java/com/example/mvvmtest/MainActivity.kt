@@ -1,47 +1,47 @@
 package com.example.mvvmtest
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.mvvmtest.ui.theme.MVVMTestTheme
 
-class MainActivity : ComponentActivity() {
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.mvvmtest.adapter.ProductAdapter
+import com.example.mvvmtest.utils.NetworkResult
+import com.example.mvvmtest.viewmodels.MainViewModel
+import com.example.mvvmtest.viewmodels.MainViewModelFactory
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var mainViewModel: MainViewModel
+    lateinit var recyclerView: RecyclerView
+    lateinit var adapter : ProductAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            MVVMTestTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+        setContentView(R.layout.activity_main)
+        recyclerView = findViewById(R.id.productList)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
+
+        val repository = (application as StoreApplication).productRepository
+        mainViewModel = ViewModelProvider(this, MainViewModelFactory(repository))
+            .get(MainViewModel::class.java)
+
+        mainViewModel.getProducts()
+
+        mainViewModel.products.observe(this, Observer {
+            when(it){
+                is NetworkResult.Success -> {
+                    Log.d("CHEEZ", it.data.toString())
+                    adapter = ProductAdapter(it.data!!)
+                    recyclerView.adapter = adapter
+
                 }
+                is NetworkResult.Error -> {}
+                is NetworkResult.Loading<*> -> TODO()
             }
-        }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MVVMTestTheme {
-        Greeting("Android")
+        })
     }
 }
