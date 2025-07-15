@@ -1,4 +1,4 @@
-package com.example.mvvmtest
+package com.example.mvvmtest.plainmvvm
 
 
 import androidx.appcompat.app.AppCompatActivity
@@ -8,10 +8,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mvvmtest.adapter.ProductAdapter
-import com.example.mvvmtest.utils.NetworkResult
-import com.example.mvvmtest.viewmodels.MainViewModel
-import com.example.mvvmtest.viewmodels.MainViewModelFactory
+import com.example.mvvmtest.R
+import com.example.mvvmtest.plainmvvm.adapter.ProductAdapter
+import com.example.mvvmtest.plainmvvm.utils.NetworkResult
+import com.example.mvvmtest.plainmvvm.viewmodels.MainViewModel
+import com.example.mvvmtest.plainmvvm.viewmodels.MainViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 

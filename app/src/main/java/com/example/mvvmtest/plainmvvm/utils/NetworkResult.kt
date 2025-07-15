@@ -1,4 +1,4 @@
-package com.example.mvvmtest.utils
+package com.example.mvvmtest.plainmvvm.utils
 
 sealed class NetworkResult<T>(val data: T? = null, val message: String? = null) {
 

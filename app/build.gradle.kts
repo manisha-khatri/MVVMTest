@@ -39,6 +39,18 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    /**
+     * setting up src/sharedTest/java as a common test folder shared between test (unit tests)
+     * and androidTest (instrumented tests). Very clean, very DRY.
+     */
+    sourceSets {
+        getByName("androidTest") {
+            java.srcDirs("src/sharedTest/java")
+        }
+        getByName("test") {
+            java.srcDirs("src/sharedTest/java")
+        }
+    }
     buildFeatures {
         viewBinding = true
         compose = true

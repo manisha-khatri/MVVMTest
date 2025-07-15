@@ -1,6 +1,6 @@
-package com.example.mvvmtest.api
+package com.example.mvvmtest.plainmvvm.api
 
-import com.example.mvvmtest.models.ProductListItem
+import com.example.mvvmtest.plainmvvm.models.ProductListItem
 import retrofit2.Response
 import retrofit2.http.GET
 

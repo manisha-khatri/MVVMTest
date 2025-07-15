@@ -1,8 +1,8 @@
-package com.example.mvvmtest
+package com.example.mvvmtest.plainmvvm
 
 import android.app.Application
-import com.example.mvvmtest.api.ProductsAPI
-import com.example.mvvmtest.repository.ProductRepository
+import com.example.mvvmtest.plainmvvm.api.ProductsAPI
+import com.example.mvvmtest.plainmvvm.repository.ProductRepository
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

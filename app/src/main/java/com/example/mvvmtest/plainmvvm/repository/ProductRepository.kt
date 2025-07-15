@@ -1,8 +1,8 @@
-package com.example.mvvmtest.repository
+package com.example.mvvmtest.plainmvvm.repository
 
-import com.example.mvvmtest.api.ProductsAPI
-import com.example.mvvmtest.models.ProductListItem
-import com.example.mvvmtest.utils.NetworkResult
+import com.example.mvvmtest.plainmvvm.api.ProductsAPI
+import com.example.mvvmtest.plainmvvm.models.ProductListItem
+import com.example.mvvmtest.plainmvvm.utils.NetworkResult
 
 class ProductRepository(private val productsAPI: ProductsAPI) {
 

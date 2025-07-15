@@ -1,4 +1,4 @@
-package com.example.mvvmtest.models
+package com.example.mvvmtest.plainmvvm.models
 
 data class ProductListItem(
     val category: String,

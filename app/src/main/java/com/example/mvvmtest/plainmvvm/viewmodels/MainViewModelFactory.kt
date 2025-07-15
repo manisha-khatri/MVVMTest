@@ -1,8 +1,8 @@
-package com.example.mvvmtest.viewmodels
+package com.example.mvvmtest.plainmvvm.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.mvvmtest.repository.ProductRepository
+import com.example.mvvmtest.plainmvvm.repository.ProductRepository
 
 class MainViewModelFactory(private val productRepository: ProductRepository) :
     ViewModelProvider.Factory {

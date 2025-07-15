@@ -1,0 +1,26 @@
+[
+  {
+    "category": "Electronics",
+    "description": "A powerful smartphone with cutting-edge features.",
+    "id": 101,
+    "image": "https://example.com/images/phone.jpg",
+    "price": 799.99,
+    "title": "Smartphone Ultra X"
+  },
+  {
+    "category": "Books",
+    "description": "A thrilling mystery novel that keeps you hooked.",
+    "id": 102,
+    "image": "https://example.com/images/book.jpg",
+    "price": 19.99,
+    "title": "The Silent Witness"
+  },
+  {
+    "category": "Home Decor",
+    "description": "A modern wall clock with a minimalist design.",
+    "id": 103,
+    "image": "https://example.com/images/clock.jpg",
+    "price": 49.99,
+    "title": "Minimalist Wall Clock"
+  }
+]

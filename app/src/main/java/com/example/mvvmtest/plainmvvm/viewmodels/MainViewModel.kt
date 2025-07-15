@@ -1,12 +1,12 @@
-package com.example.mvvmtest.viewmodels
+package com.example.mvvmtest.plainmvvm.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mvvmtest.models.ProductListItem
-import com.example.mvvmtest.repository.ProductRepository
-import com.example.mvvmtest.utils.NetworkResult
+import com.example.mvvmtest.plainmvvm.models.ProductListItem
+import com.example.mvvmtest.plainmvvm.repository.ProductRepository
+import com.example.mvvmtest.plainmvvm.utils.NetworkResult
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val repository: ProductRepository) : ViewModel() {
