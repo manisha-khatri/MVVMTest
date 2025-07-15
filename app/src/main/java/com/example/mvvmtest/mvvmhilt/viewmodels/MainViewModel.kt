@@ -11,10 +11,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val repository: ProductRepository) : ViewModel() {
+class MainViewModel @Inject constructor(
+    private val repository: ProductRepository
+) : ViewModel() {
 
-    val productsLiveData : LiveData<List<Product>>
-    get() = repository.products
+    val productsLiveData: LiveData<List<Product>> get() = repository.products
 
     init {
         viewModelScope.launch {
@@ -22,5 +23,4 @@ class MainViewModel @Inject constructor(private val repository: ProductRepositor
             repository.getProducts()
         }
     }
-
 }

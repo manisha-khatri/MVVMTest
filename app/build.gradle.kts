@@ -16,8 +16,7 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.mvvmtest.mvvmhilt.CustomRunner"
     }
 
     buildTypes {
@@ -98,6 +97,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment) // This is for fragments, might not be needed if solely Compose Navigation.
 
     // Hilt
+    androidTestImplementation(libs.hilt.android.testing)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler) // KSP for Dagger Hilt
     implementation(libs.androidx.hilt.navigation.compose) // For hiltViewModel() in Compose

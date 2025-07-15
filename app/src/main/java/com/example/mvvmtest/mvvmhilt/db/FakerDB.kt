@@ -6,7 +6,5 @@ import com.example.mvvmtest.mvvmhilt.models.Product
 
 @Database(entities = [Product::class], version = 1)
 abstract class FakerDB : RoomDatabase() {
-
-    abstract fun getFakerDAO() : FakerDAO
-
+    abstract fun getFakerDAO(): FakerDAO
 }
